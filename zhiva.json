@@ -1,0 +1,9 @@
+{
+    "icon": "default",
+    "win_icon": "default",
+    "name": "Noted",
+    "description": "Zhiva Noted - note app",
+    "version": "0.0.1",
+    "license": "MIT",
+    "author": "wxn0brP"
+}

@@ -1,0 +1,28 @@
+{
+	"name": "@wxn0brp/zhiva-noted",
+	"version": "0.0.1",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"description": "A simple note-taking application",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/wxn0brP/Zhiva-noted.git"
+	},
+	"homepage": "https://github.com/wxn0brP/Zhiva-noted",
+	"author": "wxn0brP",
+	"license": "MIT",
+	"type": "module",
+	"scripts": {
+		"build": "bun build src/browser.ts --outdir dist --minify --sourcemap",
+		"start": "bun run src/index.ts"
+	},
+	"devDependencies": {
+		"@types/bun": "*",
+		"@wxn0brp/flanker-ui": "^0.4.7",
+		"@wxn0brp/zhiva-base-lib": "github:wxn0brP/Zhiva-base-lib",
+		"typescript": "*"
+	},
+	"dependencies": {
+		"@wxn0brp/db": "^0.41.0"
+	}
+}
