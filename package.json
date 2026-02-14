@@ -18,11 +18,11 @@
 	},
 	"devDependencies": {
 		"@types/bun": "*",
-		"@wxn0brp/flanker-ui": "^0.4.7",
+		"@wxn0brp/flanker-ui": "^0.5.1",
 		"@wxn0brp/zhiva-base-lib": "github:wxn0brP/Zhiva-base-lib",
 		"typescript": "*"
 	},
 	"dependencies": {
-		"@wxn0brp/db": "^0.41.0"
+		"@wxn0brp/db": "^0.70.0"
 	}
 }

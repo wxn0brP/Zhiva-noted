@@ -1,14 +1,20 @@
+import { ValtheraCreate } from "@wxn0brp/db";
 import { apiRouter } from "@wxn0brp/zhiva-base-lib/api";
 import { app, oneWindow } from "@wxn0brp/zhiva-base-lib/server";
-import { Valthera } from "@wxn0brp/db";
 
 app.static("public");
 app.static("dist");
 
-const db = new Valthera("data");
+const db = ValtheraCreate<{
+    notes: {
+        _id: string;
+        title: string;
+        content: string;
+    }
+}>("data");
 
 apiRouter.get("/notes", async (req, res) => {
-    return await db.find("notes");
+    return await db.notes.find();
 });
 
 apiRouter.post("/notes", async (req, res) => {
@@ -16,7 +22,7 @@ apiRouter.post("/notes", async (req, res) => {
     if (!title) return { err: true, msg: "Missing title" };
     if (!content) return { err: true, msg: "Missing content" };
 
-    const { _id } = await db.add("notes", {
+    const { _id } = await db.notes.add({
         title,
         content,
     });
@@ -27,7 +33,7 @@ apiRouter.put("/notes", async (req) => {
     const { _id, title, content } = req.body;
     if (!_id) return { err: true, msg: "Missing id" };
 
-    const updated = await db.updateOne("notes", { _id }, { title, content });
+    const updated = await db.notes.updateOne({ _id }, { title, content });
     return { err: false, updated };
 });
 
@@ -35,7 +41,7 @@ apiRouter.delete("/notes", async (req) => {
     const { _id } = req.body;
     if (!_id) return { err: true, msg: "Missing id" };
 
-    const removed = await db.removeOne("notes", { _id });
+    const removed = await db.notes.removeOne({ _id });
     return { err: false, removed };
 });
 
