@@ -20,7 +20,7 @@
 		"@types/bun": "*",
 		"@wxn0brp/flanker-ui": "^0.5.1",
 		"@wxn0brp/zhiva-base-lib": "github:wxn0brP/Zhiva-base-lib",
-		"typescript": "*"
+		"typescript": "^5"
 	},
 	"dependencies": {
 		"@wxn0brp/db": "^0.70.0"
