@@ -23,6 +23,6 @@
         "typescript": "^6"
     },
     "dependencies": {
-        "@wxn0brp/db": "^0.100.1"
+        "@wxn0brp/db": "^0.120.0"
     }
 }
